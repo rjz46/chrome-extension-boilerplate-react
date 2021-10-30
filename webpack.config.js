@@ -79,7 +79,8 @@ var options = {
         options: {
           name: '[name].[ext]',
         },
-        exclude: /node_modules/,
+        //edited from template
+        //exclude: /node_modules/,
       },
       {
         test: /\.html$/,
@@ -157,6 +158,15 @@ var options = {
       patterns: [
         {
           from: 'src/assets/img/icon-34.png',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
           to: path.join(__dirname, 'build'),
           force: true,
         },

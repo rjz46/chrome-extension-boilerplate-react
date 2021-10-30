@@ -1,4 +1,4 @@
-.App {
+/*.App {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -42,4 +42,45 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.app-logo {
+  height:50px;
+}
+
+body {
+  width: 350px;
+  height: 480px;
+}
+
+.bt {
+  color: #1ca0af;
+  font-weight: bold;
+}
+
+.gt {
+  color: #8fa70c;
+  font-weight: bold;
+}
+
+.ot {
+  color: #ff4500;
+  font-weight: bold;
+}
+
+
+.app-tag {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
 }
