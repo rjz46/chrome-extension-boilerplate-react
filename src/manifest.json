@@ -1,29 +1,47 @@
 {
+  "manifest_version": 3,
   "name": "Conversation Mediator",
   "short_name": "ConvoMed",
   "version": "1.0",
   "description": "Leveraging Big Data to Mediate Conflicts on Reddit",
   "background": {
-    "scripts": ["background.bundle.js"],
-    "persistent": false
+    "service_worker": "background.bundle.js"
   },
-  "content_scripts": [{
-    "matches": ["*://*.reddit.com/*"],
-    "js": ["DisVis/libs/jquery-1.10.1.min.js", "DisVis/libs/jquery.embedly-3.1.1.min.js", "contentScript.bundle.js"],
-    "css": ["content.styles.css"]
-  }],
-  "browser_action": {
-  	"default_title": "Reddit ConvoMed",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.reddit.com/*"
+      ],
+      "js": [
+        "DisVis/libs/jquery-1.10.1.min.js",
+        "DisVis/libs/jquery.embedly-3.1.1.min.js",
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Reddit ConvoMed",
     "default_popup": "popup.html",
     "default_icon": "/images/convomed_logo_nn.png"
   },
-  "permissions": ["storage", "https://www.reddit.com/*"],
+  "permissions": [
+    "storage",
+    "https://www.reddit.com/*"
+  ],
   "icons": {
     "16": "/images/convomed_logo_nn.png",
     "48": "/images/convomed_logo_nn.png",
     "128": "/images/convomed_logo_nn.png"
   },
-  "manifest_version": 2,
-  "web_accessible_resources": ["*.reddit.com/*", "content.styles.css", "logo.svg", "/images/*", "/DisVis/*"],
+  "web_accessible_resources": [
+    "*.reddit.com/*",
+    "content.styles.css",
+    "logo.svg",
+    "/images/*",
+    "/DisVis/*"
+  ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
